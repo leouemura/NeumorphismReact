@@ -59,7 +59,7 @@ body{
 .field label{
     position: absolute;
     top: 50%;
-    left: 30px;
+    left: 33px;
     pointer-events: none;
     color: #666666;
     transform: translateY(-50%);
@@ -102,9 +102,10 @@ button:focus{
 .signup{
     font-size: 16px;
     color: #595959;
-    margin: 10px 0;
+    margin: 10px 0px;
 }
 .signup a{
+    margin-left: 5px;
     color: #3498db;
     text-decoration: none;
 }

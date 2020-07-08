@@ -18,9 +18,15 @@ export default function Login(){
             const res = await api.post('session', {username, password});
 
             //console.log(res.data)
-            localStorage.setItem('token',res.data);
+            if(res.data.token===undefined){
+                alert(res.data.error)
+            }
+            else{
+                localStorage.setItem('token',res.data.token);
             
-            history.push('/profile');
+                history.push('/profile');
+            }
+            
         } catch(err){
             alert('Falha no login, tente novamente.')
         }
