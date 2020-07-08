@@ -3,8 +3,10 @@ import './styles.css';
 import {FiLogIn} from 'react-icons/fi';
 import {Link, useHistory} from 'react-router-dom';
 
-export default function Login(){
+import api from '../../services/api';
 
+export default function Login(){
+    
 
 
     return(
