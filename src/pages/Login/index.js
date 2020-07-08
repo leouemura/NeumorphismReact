@@ -1,32 +1,56 @@
 import React, {useState} from 'react';
 import './styles.css';
-import {FiLogIn} from 'react-icons/fi';
+import {FaUser,FaLock} from 'react-icons/fa';
 import {Link, useHistory} from 'react-router-dom';
 
 import api from '../../services/api';
 
 export default function Login(){
-    
+    const [username,setUsername] = useState('');
+    const [password,setPassword] = useState('');
+
+    const history = useHistory();
+
+    async function handleLogin(e){
+        e.preventDefault();
+
+        try{
+            const res = await api.post('session', {username, password});
+
+            //console.log(res.data)
+            localStorage.setItem('token',res.data);
+            
+            history.push('/profile');
+        } catch(err){
+            alert('Falha no login, tente novamente.')
+        }
+    }
 
 
     return(
         <div className="content">
             <div className="text">Login Form</div>
-            <form action="#">
+            <form onSubmit={handleLogin}>
                 <div className="field">
-                    <span className="fas fa-user"></span>
-                    <input type="text" required/>
-                    <label htmlFor="username">Username</label>
+                    
+                    <input type="text" value={username} onChange={e => setUsername(e.target.value)} required/>
+                    <label htmlFor="username"> 
+                        <FaUser size={12} position="absolute" width='50px' line-height='50px' color="#595959"/>
+                        Username
+                    </label>
                 </div>
                 <div className="field">
                     <span className="fas fa-lock"></span>
-                    <input type="password" required/>
-                    <label htmlFor="password">Password</label>
+                    <input type="password" value={password} onChange={e => setPassword(e.target.value)} required/>
+                    <label htmlFor="password">
+                        <FaLock size={12} position="absolute" width='50px' line-height='50px' color="#595959"/>
+                        Password
+                    </label>
                 </div>
-                <div className="forgot-pass"> <a href="#">Forgot Password?</a> </div>
-                <button>Sign In</button>
+                <div className="forgot-pass"> <Link to='/help'>Forgot Password?</Link> </div>
+                <button type="submit">Sign In</button>
                 <div className="signup">Not a member? 
-                    <a href="#">SignUp now</a>
+                    <Link to='register'>SignUp now</Link>
                 </div>
             </form>
         </div>

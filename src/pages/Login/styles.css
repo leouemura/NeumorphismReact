@@ -56,16 +56,10 @@ body{
 .field:nth-child(2){
     margin-top: 20px;
 }
-.field span{
-    position: absolute;
-    width: 50px;
-    line-height: 50px;
-    color: #595959;
-}
 .field label{
     position: absolute;
     top: 50%;
-    left: 45px;
+    left: 30px;
     pointer-events: none;
     color: #666666;
     transform: translateY(-50%);
