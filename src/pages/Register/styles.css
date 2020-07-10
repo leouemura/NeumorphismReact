@@ -163,3 +163,74 @@ button#adicionar:focus{
                 inset -5px -5px 10px #ffffff73;
 }
 
+#icon{ 
+    position:"absolute"; 
+    width:'50px';
+    line-height:'50px';
+    color:"#595959";
+    margin-right: 10px;
+    margin-left: -20px;
+}
+
+.fieldStock{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-left: -20px;
+    width: 310px;
+    background: #dde1e7;
+    border-radius: 10px;
+    
+    box-shadow: inset -3px -3px 7px #ffffff73,
+                inset 2px  3px 5px rgba(94,104,121,0.288);
+                
+}
+
+.li_span{
+    display: flex;
+    align-self: baseline;
+    flex-basis: 50%;
+    flex-shrink: 1;
+    height: 50px;
+    width: 50%;
+    
+    font-size: 18px;
+    outline: none;
+    border: none;
+    color: #595959;
+    background: #dde1e7;
+    border-radius: 25px;
+    box-shadow: inset 2px 2px 5px #babecc,
+                inset -5px -5px 10px #ffffff73;
+    
+}
+#label_X{
+    text-align: left;
+    margin-top: 12.5px;
+    padding-left: 15px;
+    width: 100px;
+}
+#button_X{
+    flex: 1 1 auto;
+    margin-right: 6px;
+    margin-top: 5px;
+    max-height: 40px;
+    max-width: 40px;
+    color: #595959;
+    font-size: 18px;
+    font-size: 600;
+    background: #dde1e7;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow:  2px  2px  5px #babecc,
+                -5px -5px 10px #ffffff73;
+}
+#button_X:focus{
+    box-shadow: inset 2px 2px 5px #babecc,
+                inset -5px -5px 10px #ffffff73;
+}
